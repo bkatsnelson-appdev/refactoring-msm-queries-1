@@ -12,6 +12,8 @@
 #
 class Actor < ApplicationRecord
   def characters
-    return "Hi"
+    chars = Character.where({ :actor_id => self.id })
+
+    return chars
   end
 end

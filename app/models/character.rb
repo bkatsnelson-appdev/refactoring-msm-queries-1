@@ -11,6 +11,10 @@
 #
 class Character < ApplicationRecord
   def movie
-    return "hi"
+    return Movie.where({ :id => self.movie_id })[0]
+  end
+
+  def actor
+    return Actor.where({ :id => self.actor_id })[0]
   end
 end
