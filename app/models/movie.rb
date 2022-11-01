@@ -13,4 +13,13 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+  def director
+    #Get the foreign key, director_id
+    #Query the Director table in the ID column with it
+    #Get the signle match and return
+
+    matching_directors = Director.where({ :id => self.director_id })
+    the_director = matching_directors[0]
+    return the_director
+  end
 end
